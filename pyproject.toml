@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "promptlab"
+version = "0.0.3"
+description = "PromptLab is a free, lightweight, open-source experimentation tool for Gen AI applications."
+readme = "README.md"
+authors = [{name = "Raihan Alam", email = "raihan.alam@gmail.com"}]
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pydantic>=2.0.0",
+    "requests>=2.25.0",
+    "openai>=1.60.0",
+    "flask>=3.0.0",
+    "flask-cors>=5.0.0",
+    "click>=8.0.0",
+    "ragas>=0.2.0",
+    "ollama>=0.4.7",
+    "langchain_ollama>=0.2.3",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/imum-ai/promptlab"
+Issues = "https://github.com/imum-ai/promptlab/issues"
+
+[tool.setuptools.package-data]
+promptlab = ["web/*.html"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+promptlab = "promptlab.cli:main" 
